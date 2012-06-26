@@ -55,7 +55,11 @@ def highest_score_for_player(player_stats,player):
                 date_of_score=date
                 score=player_stats[date][1][index]
             else:i+=1
-        else:return 'None'
+        else:return None
     return (score)
 print highest_score_for_player(player_stats,'torres')
 ## implement highest_scorer
+
+
+
+
