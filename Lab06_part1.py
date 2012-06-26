@@ -40,13 +40,14 @@ def highest_score(player_stats):
         return (player_name,date_of_score,score)
 
 print highest_score(player_stats)
-
-
+print
 ## implement highest_score_for_player
 def highest_score_for_player(player_stats,player):
     i=0
-    for date in player_stats.viewkeys():
-        pdate=(player_stats.viewkeys())[i]
+    for date in player_stats.keys():
+        if(i==len(player_stats.keys())):
+                i=len(player_stats.keys())-1
+        pdate=player_stats.keys()[(player_stats.keys().index(date)-1)]
         if(player  in player_stats[date][0]):
             player_name=player
             index=player_stats[date][0].index(player)
@@ -55,6 +56,6 @@ def highest_score_for_player(player_stats,player):
                 score=player_stats[date][1][index]
             else:i+=1
         else:return 'None'
-    return (player_name,date_of_score,score)
-print highest_score_for_player(player_stats,'rooney')
+    return (score)
+print highest_score_for_player(player_stats,'torres')
 ## implement highest_scorer
